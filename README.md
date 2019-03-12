@@ -6,7 +6,10 @@ to an exe using Launch4j gradle task.
 To be updated Later
 
 ## Build status
-To be updated later
+To run use the following command
+
+    gradlew clean build createExe
+
 
 ## Screenshots
 To be updated later

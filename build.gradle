@@ -1,0 +1,110 @@
+import com.github.jengelman.gradle.plugins.shadow.transformers.ServiceFileTransformer
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.3.RELEASE")
+//        classpath 'edu.sc.seis.gradle:launch4j:2.4.4'
+        classpath 'edu.sc.seis.gradle:launch4j:2.3.0'
+        classpath "com.github.jengelman.gradle.plugins:shadow:5.0.0"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'edu.sc.seis.launch4j'
+apply plugin: "com.github.johnrengelman.shadow"
+
+//bootJar {
+//    baseName = 'temp-spring-boot1'
+//    version =  '0.1.0'
+//}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+//    implementation('org.springframework.boot:spring-boot-starter-security')
+    testCompile("junit:junit")
+}
+
+
+
+launch4j {
+    headerType='console'
+    outfile = 'zimbus.exe'
+    mainClassName = 'org.springframework.boot.loader.JarLauncher'
+//    icon = 'icons/app1.ico'
+    jar = 'lib/temp-spring-boot1.jar'
+}
+
+//launch4j {
+//    //xmlFileName = "C:\\kohl-idea\\temp-spring-boot1\\launch4j.xml"
+//    mainClassName = 'org.springframework.boot.loader.JarLauncher'
+//    icon = "icons/app1.ico"
+//    outputDir = "launch4j"
+//    libraryDir = "build/libs"
+//    headerType = "console"
+//    jar = "build/libs/temp-spring-boot1.jar"
+//    outfile	= 'pq.exe'
+//    jreMinVersion = "1.8.0"
+//    jdkPreference = 'preferJre'
+//    dontWrapJar = false
+//    chdir = "."
+//    classpath = []
+//}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//launch4j {
+//    mainClassName = 'org.springframework.boot.loader.JarLauncher'
+//    icon = "icons/app1.ico"
+//    outputDir = "build"
+//    headerType = "console"
+//    jar = "build/libs/temp-spring-boot1.jar"
+//    outfile	= 'pq.exe'
+//    jreMinVersion = "1.8.0"
+//    jdkPreference = 'preferJre'
+//    dontWrapJar = false
+//}
+
+
+//shadowJar {
+//    transform(ServiceFileTransformer) {
+//        exclude 'META-INF/*.DSA'
+//        exclude 'META-INF/*.RSA'
+//        exclude 'LICENSE*'
+//    }
+//    transform(com.github.jengelman.gradle.plugins.shadow.transformers.AppendingTransformer) {
+//        resource = 'reference.conf'
+//    }
+//    classifier = ''
+//}
+
+
+
+
+
+//launch4j {
+//    mainClassName = 'org.springframework.boot.loader.JarLauncher'
+//    icon = "${projectDir}/icons/myApp.ico"
+//    outfile = "${projectDir}/code/pcgen.exe"
+//    jreMaxVersion = '1.8.0'
+//    jdkPreference = 'preferJre'
+//    initialHeapSize = 128
+//    maxHeapSize = 512
+//    stayAlive = false
+////    bundledJre64Bit = true
+//    jar = "${projectDir}/build/libs/temp-spring-boot1.jar"
+//    dontWrapJar = true
+////    bundledJrePath = 'jre'
+//}

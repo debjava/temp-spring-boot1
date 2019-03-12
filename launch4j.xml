@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>console</headerType>
+  <jar>build\libs\temp-spring-boot1.jar</jar>
+  <outfile>abc.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>icons\app1.ico</icon>
+  <classPath>
+    <mainClass>org.springframework.boot.loader.JarLauncher</mainClass>
+  </classPath>
+  <jre>
+    <path></path>
+    <bundledJre64Bit>false</bundledJre64Bit>
+    <bundledJreAsFallback>false</bundledJreAsFallback>
+    <minVersion>1.8.0</minVersion>
+    <maxVersion></maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+    <runtimeBits>64/32</runtimeBits>
+  </jre>
+  <versionInfo>
+    <fileVersion>0.0.0.1</fileVersion>
+    <txtFileVersion>unspecified</txtFileVersion>
+    <fileDescription>temp-spring-boot1</fileDescription>
+    <copyright>unknown</copyright>
+    <productVersion>0.0.0.1</productVersion>
+    <txtProductVersion>unspecified</txtProductVersion>
+    <productName>temp-spring-boot1</productName>
+    <companyName></companyName>
+    <internalName>temp-spring-boot1</internalName>
+    <originalFilename>abc.exe</originalFilename>
+    <trademarks></trademarks>
+    <language>ENGLISH_US</language>
+  </versionInfo>
+</launch4jConfig>
